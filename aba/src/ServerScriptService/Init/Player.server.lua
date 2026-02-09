@@ -12,6 +12,7 @@ game.Players.PlayerAdded:Connect(function(player)
 	player:SetAttribute("canDash", true)
 	player:SetAttribute("canBlock", true)
 	player:SetAttribute("canStun", true)
+	player:SetAttribute("Character", "Madara Uchiha")
 end)
 
 game.Players.PlayerAdded:Connect(function(player)

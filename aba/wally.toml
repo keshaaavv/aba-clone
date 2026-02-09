@@ -8,4 +8,4 @@ realm = "shared"
 
 
 [server-dependencies]
-ProfileService = "firebird702/profileservice@1.1.0"
+profilestore = "lm-loleris/profilestore@1.0.3"

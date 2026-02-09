@@ -3,11 +3,11 @@
 registry = "test"
 
 [[package]]
-name = "firebird702/profileservice"
-version = "1.1.0"
-dependencies = []
-
-[[package]]
 name = "keshav/aba"
 version = "0.1.0"
-dependencies = [["ProfileService", "firebird702/profileservice@1.1.0"]]
+dependencies = [["profilestore", "lm-loleris/profilestore@1.0.3"]]
+
+[[package]]
+name = "lm-loleris/profilestore"
+version = "1.0.3"
+dependencies = []

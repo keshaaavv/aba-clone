@@ -6,12 +6,15 @@ local HighlightModule = require(ServerScriptService.Highlight)
 States["Neutral"] = {
 	onEnter = function(player)
 		print("[fsm] neutral" .. " - " .. player.UserId)
+		-- fsm attribute
+		player:SetAttribute("State", "Neutral")
 		-- set attributes
 		player:SetAttribute("canAttack", true)
 		player:SetAttribute("canAbility", true)
 		player:SetAttribute("canDash", true)
 		player:SetAttribute("canBlock", true)
 		player:SetAttribute("canEvasive", false)
+		-- highlight
 		HighlightModule.setHighlight(player, {
 			FillColor = Color3.fromRGB(0, 255, 0), -- green fill
 			OutlineColor = Color3.fromRGB(255, 255, 255), -- white outline
@@ -25,6 +28,8 @@ States["Neutral"] = {
 States["Block"] = {
 	onEnter = function(player)
 		print("[fsm] block" .. " - " .. player.UserId)
+		-- fsm attribute
+		player:SetAttribute("State", "Block")
 		-- set attributes
 		player:SetAttribute("canAttack", false)
 		player:SetAttribute("canAbility", false)
@@ -47,6 +52,8 @@ States["Block"] = {
 States["Gaurdbreak"] = {
 	onEnter = function(player)
 		print("[fsm] gb" .. " - " .. player.UserId)
+		-- fsm attribute
+		player:SetAttribute("State", "Gaurdbreak")
 		-- set attributes
 		player:SetAttribute("canAttack", false)
 		player:SetAttribute("canAbility", false)
@@ -65,6 +72,8 @@ States["Gaurdbreak"] = {
 States["Ability"] = {
 	onEnter = function(player)
 		print("[fsm] ability" .. " - " .. player.UserId)
+		-- fsm attribute
+		player:SetAttribute("State", "Ability")
 		-- set attributes
 		player:SetAttribute("canAttack", false)
 		player:SetAttribute("canAbility", false)
@@ -84,6 +93,8 @@ States["Ability"] = {
 States["Attack"] = {
 	onEnter = function(player)
 		print("[fsm] attack" .. " - " .. player.UserId)
+		-- fsm attribute
+		player:SetAttribute("State", "Ability")
 		-- set attributes
 		player:SetAttribute("canAttack", false)
 		player:SetAttribute("canAbility", true)
@@ -102,7 +113,8 @@ States["Attack"] = {
 
 States["Stun"] = {
 	onEnter = function(player)
-		print("[fsm] stun" .. " - " .. player.UserId)
+		-- fsm attribute
+		player:SetAttribute("State", "Stun")
 		-- set attributes
 		player:SetAttribute("canAttack", false)
 		player:SetAttribute("canAbility", true)
