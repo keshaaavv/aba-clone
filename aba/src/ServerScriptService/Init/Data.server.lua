@@ -25,19 +25,25 @@ local function init(player: Player, profile: typeof(PlayerStore:StartSessionAsyn
 	leaderstats.Parent = player
 	leaderstats.Name = "leaderstats"
 
+	-- store data elsewhere (SSS.Data.Loaded.Player.[data here])
+
+	local loadedData = Instance.new("Folder")
+	loadedData.Name = ("Player_" .. player.UserId)
+	loadedData.Parent = ServerScriptService.Data.Loaded
+
 	local Gold = Instance.new("NumberValue")
 	Gold.Name = "Gold"
-	Gold.Parent = leaderstats
+	Gold.Parent = loadedData
 	Gold.Value = profile.Data.Gold
 
 	local Level = Instance.new("NumberValue")
 	Level.Name = "Level"
-	Level.Parent = leaderstats
+	Level.Parent = loadedData
 	Level.Value = profile.Data.Level
 
 	local Exp = Instance.new("NumberValue")
 	Exp.Name = "Exp"
-	Exp.Parent = leaderstats
+	Exp.Parent = loadedData
 	Exp.Value = profile.Data.Exp
 
 	-- sync
