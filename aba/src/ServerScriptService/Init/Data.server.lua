@@ -46,9 +46,26 @@ local function init(player: Player, profile: typeof(PlayerStore:StartSessionAsyn
 	Exp.Parent = loadedData
 	Exp.Value = profile.Data.Exp
 
+	local Prestiges = Instance.new("NumberValue")
+	Prestiges.Name = "Prestiges"
+	Prestiges.Parent = loadedData
+	Prestiges.Value = profile.Data.Prestiges
+
+	local Title = Instance.new("StringValue")
+	Title.Name = "Title"
+	Title.Parent = loadedData
+	Title.Value = profile.Data.Title
+
 	-- sync
 	ReplicatedStorage.Remotes.Data.UpdateGold:FireClient(player, profile.Data.Gold)
-	ReplicatedStorage.Remotes.Data.UpdateLevel:FireClient(player, profile.Data.Level)
+
+	ReplicatedStorage.Remotes.Data.UpdateLevelInfo:FireClient(
+		player,
+		profile.Data.Level,
+		profile.Data.Prestiges,
+		profile.Data.Title
+	)
+
 	ReplicatedStorage.Remotes.Data.UpdateExp:FireClient(player, profile.Data.Exp)
 end
 
