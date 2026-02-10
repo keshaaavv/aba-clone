@@ -1,18 +1,8 @@
 # aba clone
-using [rojo](https://github.com/rojo-rbx/rojo) 7.6.1.
-[wally](https://wally.run) package manager
 
-## Getting Started
-To build the place from scratch, use:
+contains:
 
-```bash
-rojo build -o "aba clone.rbxlx"
-```
-
-Next, open `aba clone.rbxlx` in Roblox Studio and start the Rojo server:
-
-```bash
-rojo serve
-```
-
-For more help, check out [the Rojo documentation](https://rojo.space/docs).
+- character system
+- currencies & levels
+- combat system
+  '> states, inputs etc.
