@@ -1,5 +1,6 @@
 return {
 	Price = 3600,
+	Roster = "Naruto",
 	Description = "ghost of the uchiha clan",
 	Moves = {
 		Base = {
